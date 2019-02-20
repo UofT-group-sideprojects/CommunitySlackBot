@@ -9,7 +9,7 @@ from handlers import on_message
 with open('config/config.yml', 'r') as configfile:
     config = yaml.safe_load(configfile)
 
-with open(config['token'], 'r') as tokenfile:
+with open(config['slack_token'], 'r') as tokenfile:
     token = tokenfile.read()
 
 client = SlackClient(token)

@@ -1,3 +1,4 @@
 polling_frequency: 1
-token: config/token.txt
+slack_token: config/slack.txt
+github_token: config/github.txt
 client_id: UGCBC4Q23
