@@ -2,3 +2,4 @@ pyyaml
 slackclient
 websocket
 websocket-client
+requests
