@@ -57,7 +57,7 @@ def on_message(client, message: Message):
             text=answer
         )
 
-    elif content.startswith(f"{client.client_id} help"):
+    elif content.startswith(f"<@{client.client_id}> help"):
         client.api_call(
             'chat.postMessage',
             channel=message.channel,
