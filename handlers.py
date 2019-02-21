@@ -19,6 +19,7 @@ ratelimits = {}
 
 def on_message(client, message: Message):
     if f'<@{client.client_id}>' not in message.text: return
+    if message.user == client.client_id: return
     content = message.text.strip()
     match = re.match(
         f"<@{client.client_id}> add ([^\s]+) to(?: the)? github.*",
@@ -54,4 +55,12 @@ def on_message(client, message: Message):
             'chat.postMessage',
             channel=message.channel,
             text=answer
+        )
+
+    elif content.startswith(f"{client.client_id} help"):
+        client.api_call(
+            'chat.postMessage',
+            channel=message.channel,
+            text=f'Send "<@{client.client_id}> add <your github handle> to github" ' \
+                  'to invite yourself to the group project organization'
         )
