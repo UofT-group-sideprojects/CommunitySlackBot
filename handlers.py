@@ -41,6 +41,7 @@ def on_message(client, message: Message):
         )
         payload = response.json()
         if response.status_code != 200:
+            print(payload)
             answer = "Sorry, I can't do that D:"
         elif payload['state'] == 'pending':
             answer = f"An invite has been sent to {account} Check your email :)"
