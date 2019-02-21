@@ -9,7 +9,7 @@ with open('config/config.yml', 'r') as configfile:
     config = yaml.safe_load(configfile)
 
 with open(config['github_token'], 'r') as tokenfile:
-    token = tokenfile.read()
+    token = tokenfile.read().strip()
 
 
 AUTH_HEADER = {'Authorization': f'token {token}'}

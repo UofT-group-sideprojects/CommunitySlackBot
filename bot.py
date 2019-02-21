@@ -10,7 +10,7 @@ with open('config/config.yml', 'r') as configfile:
     config = yaml.safe_load(configfile)
 
 with open(config['slack_token'], 'r') as tokenfile:
-    token = tokenfile.read()
+    token = tokenfile.read().strip()
 
 client = SlackClient(token)
 client.client_id = config['client_id']
